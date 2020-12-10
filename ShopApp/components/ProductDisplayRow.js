@@ -120,7 +120,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         paddingTop: 10,
-        paddingHorizontal: 10,
+        paddingHorizontal: 20,
         height: '35%'
         
     },
@@ -128,23 +128,23 @@ const styles = StyleSheet.create({
     sectionOneTablet:{
         flexDirection: 'row',
         justifyContent: 'space-between',
-        paddingTop: 10,
-        paddingHorizontal: 10,
-        height: '85%'
+        paddingTop: 20,
+        paddingHorizontal: 20,
+        height: '80%'
         
     },
     buttonsPhone:{
         
         flexDirection: 'row',
         justifyContent: 'space-between',
-        
+        paddingHorizontal: 8
     },
 
     buttonsTablet:{
         
         flexDirection: 'row',
         justifyContent: 'space-between',
-        
+        paddingHorizontal: 10
         
     },
     
