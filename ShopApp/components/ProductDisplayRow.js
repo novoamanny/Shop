@@ -3,7 +3,7 @@ import {View, Text, StyleSheet, TouchableOpacity, Image, Dimensions, Button} fro
 
 const ProductDisplayRow = ({data, navigation, length}) =>{
     return(
-        <TouchableOpacity onPress={ () => console.log('hell0')}>
+        <TouchableOpacity onPress={ () => navigation.push('ItemPage', {data})}>
             {/* <View style={Dimensions.get('window').width < 600 ? styles.LayoutPhone : styles.LayoutTablet, data.index === 0 ? styles.topItem: (data.index === length - 1 ? styles.bottomItem : null)}> */}
             <View style={Dimensions.get('window').width < 600 ? styles.LayoutPhone : styles.LayoutTablet}>
                 <Image style={Dimensions.get('window').width < 600 ? styles.imagePhone : styles.imageTablet} source={{uri: data.item.imageUrl}}/>

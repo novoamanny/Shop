@@ -1,7 +1,7 @@
 {
   "main": "node_modules/expo/AppEntry.js",
   "scripts": {
-    "git": "cd .. && git add . && git commit -m'0.0.1' && git push && cd ShopApp && npm start",
+    "git": "cd .. && git add . && git commit -m'0.0.2' && git push && cd ShopApp && npm start",
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",

@@ -6,7 +6,8 @@ import PropTypes from 'prop-types'
 
 import {getRates, getProducts} from '../../store/actions/products';
 
-import ProductDisplayRow from '../../components/ProductDisplayRow'
+import ProductDisplayRow from '../../components/ProductDisplayRow';
+import HeaderImage from '../../components/HeaderImage';
 
 
 const ProductsOverviewScreen = ({getRates, getProducts, products:{availableProducts}, navigation}) =>{
@@ -41,6 +42,12 @@ const styles = StyleSheet.create({
     },
     
 })
+
+ProductsOverviewScreen.navigationOptions = ({navigation}) =>{
+    return{
+        headerTitle: () => <HeaderImage/>
+    }
+}
 
 ProductsOverviewScreen.propTypes = {
     getRates: PropTypes.func.isRequired,
