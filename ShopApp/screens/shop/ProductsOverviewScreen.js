@@ -1,5 +1,5 @@
 import React, {useEffect} from 'react';
-import {FlatList, View, ScrollView, Text, StyleSheet} from 'react-native';
+import {FlatList, View, ScrollView, Text, StyleSheet, Dimensions} from 'react-native';
 
 import {connect} from 'react-redux';
 import PropTypes from 'prop-types'
@@ -16,15 +16,17 @@ const ProductsOverviewScreen = ({getRates, getProducts, products:{availableProdu
     }, [getProducts])
 
     const renderDataHandle = (itemData) =>{
-        return <ProductDisplayRow data={itemData} navigation={navigation}/>
+        const length = availableProducts.length;
+        return <ProductDisplayRow data={itemData} navigation={navigation} length={length}/>
+        
     }
 
     return(
         <View style={styles.Layout}>
-            
+            <View >
             {availableProducts && <FlatList data={availableProducts} renderItem={renderDataHandle}/>}
             
-            
+            </View>
         </View>
     )
 }
@@ -36,7 +38,8 @@ const styles = StyleSheet.create({
         
         backgroundColor: '#fff',
         
-    }
+    },
+    
 })
 
 ProductsOverviewScreen.propTypes = {
