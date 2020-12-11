@@ -11,7 +11,7 @@ const ProductDetailScreen = ({navigation}) =>{
             <View >
                 <Image style={Dimensions.get('window').width < 600 ? styles.imagePhone : styles.imageTablet} source={{uri: data.item.imageUrl}}/>
             </View>
-            <View>
+            <View style={Dimensions.get('window').width < 600 ? styles.cartBTNContainerPhone : null}>
                 <Button
                     onPress={() => console.log('Added')}
                     title="Add To Cart"
@@ -62,7 +62,10 @@ const styles = StyleSheet.create({
         textAlign: 'center',
     },
     cartBTNContainerPhone:{
-
+        marginTop: 20
+    },
+    cartBTNPhone:{
+        fontSize: 30
     },
     itemPriceContainerPhone:{
         marginVertical: Dimensions.get('window').width < 400 ? 40 : 50
