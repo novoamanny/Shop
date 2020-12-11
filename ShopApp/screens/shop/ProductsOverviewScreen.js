@@ -43,11 +43,7 @@ const styles = StyleSheet.create({
     
 })
 
-ProductsOverviewScreen.navigationOptions = ({navigation}) =>{
-    return{
-        headerTitle: () => <HeaderImage/>
-    }
-}
+
 
 ProductsOverviewScreen.propTypes = {
     getRates: PropTypes.func.isRequired,

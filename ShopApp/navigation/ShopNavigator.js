@@ -9,10 +9,21 @@ import {Ionicons} from '@expo/vector-icons';
 
 import ProductsOverviewScreen from '../screens/shop/ProductsOverviewScreen';
 import ProductDetailScreen from '../screens/shop/ProductDetailScreen';
+import HeaderImage from '../components/HeaderImage';
 
 const ShopNavigator = createStackNavigator({
-    Landing: ProductsOverviewScreen,
-    ItemPage: ProductDetailScreen
+    Landing: {
+        screen: ProductsOverviewScreen,
+        navigationOptions:{
+            headerTitle: () => <HeaderImage/>
+        }
+    },
+    ItemPage: {
+        screen: ProductDetailScreen,
+        navigationOptions:{
+            headerTitle: () => <HeaderImage/>
+        }
+    },
 })
 
 export default createAppContainer(ShopNavigator);

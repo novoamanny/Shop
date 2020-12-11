@@ -15,7 +15,7 @@ const ProductDisplayRow = ({data, navigation, length}) =>{
                     
                     <View style={Dimensions.get('window').width < 600 ? styles.buttonsPhone : styles.buttonsTablet}>
                         <Button
-                        onPress={null}
+                        onPress={() => navigation.push('ItemPage', {data})}
                         title="View Details"
                         color="#841584"
                         accessibilityLabel="Learn more about this purple button"
