@@ -20,8 +20,14 @@ const ShopNavigator = createStackNavigator({
     },
     ItemPage: {
         screen: ProductDetailScreen,
-        navigationOptions:{
-            headerTitle: () => <HeaderImage/>
+        navigationOptions: ({navigation}) => {
+
+            const data = navigation.getParam('data');
+            
+            return{ 
+                headerTitle: data.item.title
+            }
+            
         }
     },
 })

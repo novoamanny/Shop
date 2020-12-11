@@ -1,6 +1,6 @@
 import React from 'react';
 
-import {View, Text, Image, StyleSheet, Dimensions, ScrollView} from 'react-native';
+import {View, Text, Image, StyleSheet, Dimensions, ScrollView, Button} from 'react-native';
 
 
 const ProductDetailScreen = ({navigation}) =>{
@@ -10,6 +10,18 @@ const ProductDetailScreen = ({navigation}) =>{
         <ScrollView style={{flex: 1}}>
             <View >
                 <Image style={Dimensions.get('window').width < 600 ? styles.imagePhone : styles.imageTablet} source={{uri: data.item.imageUrl}}/>
+            </View>
+            <View>
+                <Button
+                    onPress={() => console.log('Added')}
+                    title="Add To Cart"
+                    color="#841584"
+                    accessibilityLabel="Learn more about this purple button"
+                    
+                    />
+            </View>
+            <View style={Dimensions.get('window').width < 600 ? styles.itemPriceContainerPhone : null}>
+                <Text style={Dimensions.get('window').width < 600 ? styles.itemPricePhone : null}>{`$${data.item.price}`}</Text>
             </View>
             <View style={Dimensions.get('window').width < 600 ? styles.itemTitleContainerPhone : null}>
                 <Text style={Dimensions.get('window').width < 600 ? styles.itemTitlePhone : null}>{data.item.title}</Text>
@@ -37,7 +49,7 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     itemTitlePhone:{
-        fontSize: 20,
+        fontSize: Dimensions.get('window').width < 400 ? 16 : 20,
         fontWeight: 'bold',
         textAlign: 'center'
     },
@@ -45,10 +57,23 @@ const styles = StyleSheet.create({
         marginTop: 10
     },
     itemDescPhone:{
-        fontSize: 18,
+        fontSize: Dimensions.get('window').width < 400 ? 14 : 18,
         fontWeight: '400',
         textAlign: 'center',
+    },
+    cartBTNContainerPhone:{
+
+    },
+    itemPriceContainerPhone:{
+        marginVertical: Dimensions.get('window').width < 400 ? 40 : 50
+    },
+    itemPricePhone:{
+        textAlign: 'center',
+        fontSize: Dimensions.get('window').width < 400 ? 30: 40,
+        fontWeight: '500',
+        color: 'blue'
     }
+
 
 })
 

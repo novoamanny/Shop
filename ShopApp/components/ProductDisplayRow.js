@@ -152,7 +152,7 @@ const styles = StyleSheet.create({
         color: '#2f2f2f',
         fontWeight: 'bold',
        
-        fontSize: 17
+        fontSize: Dimensions.get('window').width < 400 ? 14 : 17,
         
     },
     textTablet:{
@@ -164,7 +164,7 @@ const styles = StyleSheet.create({
         color: 'blue',
         fontWeight: 'bold',
         
-        fontSize: 17
+        fontSize: Dimensions.get('window').width < 400 ? 14 : 17,
         
     },
     priceTablet:{
